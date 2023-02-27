@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound/>,
     children: [{
-      path: "/addIncomes",
+      path: "/react_budget/addIncomes",
       element: <AddIncomes/>
     }, {
       path: "/history",
