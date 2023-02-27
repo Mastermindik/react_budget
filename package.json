@@ -21,7 +21,7 @@
     "victory": "^36.6.8",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://mastermindik.github.io/",
+  "homepage": "https://mastermindik.github.io/react_budget/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

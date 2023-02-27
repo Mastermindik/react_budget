@@ -14,7 +14,7 @@ function NotFound() {
   <div className="text-center">
     <h2 className='my-4 display-4 font-weight-bold'>Sorry, page not found.</h2>
     <p className="">We're sorry, the page you requested could not be found. Please go back to the homepage or contact us at supportReactBudget@gmail.com</p>
-  <Link to={'/addIncomes'}>
+  <Link to={'/react_budget/addIncomes'}>
     <Button variant="primary" className="mt-3">Back to Main page</Button>
   </Link>
   </div>
