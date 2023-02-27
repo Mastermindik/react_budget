@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation {
+  width: 18rem;
+  height: 100vh;
+}
+.nav-link {
+  transition: all .5s;
+}
+.active {
+  background: #fff !important;
+}

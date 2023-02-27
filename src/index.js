@@ -1,13 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NotFound from "./components/static/NotFound"
+import AddIncomes from './components/addIncomes/AddIncomes';
+import IncomesHistory from "./components/IncomesHistory";
+import Options from "./components/Options";
+import Statistic from "./components/statistic/Statistic"
+import LogIn from './components/static/LogIn';
+import SignUp from './components/static/SignUp';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <NotFound/>,
+    children: [{
+      path: "/addIncomes",
+      element: <AddIncomes/>
+    }, {
+      path: "/history",
+      element: <IncomesHistory/>
+    }, {
+      path: "/options",
+      element: <Options/>
+    }, {
+      path: "/statistic",
+      element: <Statistic/>
+    }]
+  }, {
+    path: "/login",
+    element: <LogIn/>
+  }, {
+    path: "/signUp",
+    element: <SignUp/>
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

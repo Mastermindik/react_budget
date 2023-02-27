@@ -1,24 +1,41 @@
+import { Navbar, Nav, Container, ListGroup } from 'react-bootstrap';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Link, Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Sidebar from './Sidebar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  function changeColour(e) {
+    document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+    e.target.classList.toggle('active');
+  }
+  let [user, setUser] = useState({});
+  useEffect(() => {
+    let a = JSON.parse(localStorage.getItem('User'));
+    console.log(a);
+    setUser(a);
+  }, [])
+  return (<>
+    <Navbar  bg="dark" variant="dark">
+      <Navbar.Brand href='#'>
+        <img src={logo}
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+        />{' '}React Budget
+      </Navbar.Brand>
+      <Navbar.Collapse className="justify-content-end">
+        <Navbar.Text>
+          Signed in as: <a href="#login" className='text-capitalize'>{user?.name?.firstname}</a>
+        </Navbar.Text>
+      </Navbar.Collapse>
+    </Navbar>
+    <div className='d-flex'>
+    <Sidebar changeColour={changeColour} />
+    <Outlet />
     </div>
+  </>
   );
 }
 
