@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       element: <Statistic/>
     }]
   }, {
-    path: "/login",
+    path: "/react_budget/login",
     element: <LogIn/>
   }, {
     path: "/signUp",
