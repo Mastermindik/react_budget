@@ -23,7 +23,7 @@ import SignUp from './components/static/SignUp';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "react_budget/",
     element: <App />,
     errorElement: <NotFound/>,
     children: [{
