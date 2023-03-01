@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_budget/static/css/main.59c6b103.css",
-    "main.js": "/react_budget/static/js/main.fa4138ba.js",
+    "main.js": "/react_budget/static/js/main.466c32f4.js",
     "static/js/787.412c58fd.chunk.js": "/react_budget/static/js/787.412c58fd.chunk.js",
     "static/media/roboto-all-500-normal.woff": "/react_budget/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/react_budget/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
@@ -40,11 +40,11 @@
     "index.html": "/react_budget/index.html",
     "static/media/delete.svg": "/react_budget/static/media/delete.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "main.59c6b103.css.map": "/react_budget/static/css/main.59c6b103.css.map",
-    "main.fa4138ba.js.map": "/react_budget/static/js/main.fa4138ba.js.map",
+    "main.466c32f4.js.map": "/react_budget/static/js/main.466c32f4.js.map",
     "787.412c58fd.chunk.js.map": "/react_budget/static/js/787.412c58fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.59c6b103.css",
-    "static/js/main.fa4138ba.js"
+    "static/js/main.466c32f4.js"
   ]
 }
