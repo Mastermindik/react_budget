@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_budget/static/css/main.5311a7b0.css",
-    "main.js": "/react_budget/static/js/main.55879e2c.js",
+    "main.css": "/react_budget/static/css/main.e7c59802.css",
+    "main.js": "/react_budget/static/js/main.8f1b24c4.js",
     "static/js/787.412c58fd.chunk.js": "/react_budget/static/js/787.412c58fd.chunk.js",
     "static/media/bg-white.jpg": "/react_budget/static/media/bg-white.01f8e7a562d74cd3a153.jpg",
     "static/media/roboto-all-500-normal.woff": "/react_budget/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
@@ -40,12 +40,12 @@
     "static/media/edit.svg": "/react_budget/static/media/edit.544ddab7d973987eb3ab86a43aac7386.svg",
     "index.html": "/react_budget/index.html",
     "static/media/delete.svg": "/react_budget/static/media/delete.2001e956d267bc9b1a2349ee0a8ee521.svg",
-    "main.5311a7b0.css.map": "/react_budget/static/css/main.5311a7b0.css.map",
-    "main.55879e2c.js.map": "/react_budget/static/js/main.55879e2c.js.map",
+    "main.e7c59802.css.map": "/react_budget/static/css/main.e7c59802.css.map",
+    "main.8f1b24c4.js.map": "/react_budget/static/js/main.8f1b24c4.js.map",
     "787.412c58fd.chunk.js.map": "/react_budget/static/js/787.412c58fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5311a7b0.css",
-    "static/js/main.55879e2c.js"
+    "static/css/main.e7c59802.css",
+    "static/js/main.8f1b24c4.js"
   ]
 }
