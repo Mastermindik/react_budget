@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/react_budget/static/css/main.cd98dd8d.css",
-    "main.js": "/react_budget/static/js/main.71880f8e.js",
+    "main.css": "/react_budget/static/css/main.abd4039b.css",
+    "main.js": "/react_budget/static/js/main.2a2e0a15.js",
     "static/js/787.412c58fd.chunk.js": "/react_budget/static/js/787.412c58fd.chunk.js",
     "static/media/bg-4.jpg": "/react_budget/static/media/bg-4.4dbb0fdcaa0e10720be2.jpg",
+    "static/media/bg-mini.jpg": "/react_budget/static/media/bg-mini.972c134e4f899d4b0391.jpg",
     "static/media/bg-white.jpg": "/react_budget/static/media/bg-white.01f8e7a562d74cd3a153.jpg",
     "static/media/roboto-all-500-normal.woff": "/react_budget/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/react_budget/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
@@ -44,12 +45,12 @@
     "static/media/arrow.svg": "/react_budget/static/media/arrow.2525c770c5a3c1da296e2cac0ed650e7.svg",
     "static/media/decline.svg": "/react_budget/static/media/decline.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "static/media/delete.svg": "/react_budget/static/media/delete.2001e956d267bc9b1a2349ee0a8ee521.svg",
-    "main.cd98dd8d.css.map": "/react_budget/static/css/main.cd98dd8d.css.map",
-    "main.71880f8e.js.map": "/react_budget/static/js/main.71880f8e.js.map",
+    "main.abd4039b.css.map": "/react_budget/static/css/main.abd4039b.css.map",
+    "main.2a2e0a15.js.map": "/react_budget/static/js/main.2a2e0a15.js.map",
     "787.412c58fd.chunk.js.map": "/react_budget/static/js/787.412c58fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd98dd8d.css",
-    "static/js/main.71880f8e.js"
+    "static/css/main.abd4039b.css",
+    "static/js/main.2a2e0a15.js"
   ]
 }
