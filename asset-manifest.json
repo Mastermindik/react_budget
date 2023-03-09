@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_budget/static/css/main.2417e42f.css",
+    "main.css": "/react_budget/static/css/main.7ca66aa2.css",
     "main.js": "/react_budget/static/js/main.acccb1dc.js",
     "static/js/787.412c58fd.chunk.js": "/react_budget/static/js/787.412c58fd.chunk.js",
     "static/media/bg-4.jpg": "/react_budget/static/media/bg-4.4dbb0fdcaa0e10720be2.jpg",
@@ -45,12 +45,12 @@
     "static/media/arrow.svg": "/react_budget/static/media/arrow.2525c770c5a3c1da296e2cac0ed650e7.svg",
     "static/media/decline.svg": "/react_budget/static/media/decline.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "static/media/delete.svg": "/react_budget/static/media/delete.2001e956d267bc9b1a2349ee0a8ee521.svg",
-    "main.2417e42f.css.map": "/react_budget/static/css/main.2417e42f.css.map",
+    "main.7ca66aa2.css.map": "/react_budget/static/css/main.7ca66aa2.css.map",
     "main.acccb1dc.js.map": "/react_budget/static/js/main.acccb1dc.js.map",
     "787.412c58fd.chunk.js.map": "/react_budget/static/js/787.412c58fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2417e42f.css",
+    "static/css/main.7ca66aa2.css",
     "static/js/main.acccb1dc.js"
   ]
 }
