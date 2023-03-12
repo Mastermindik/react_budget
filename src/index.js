@@ -5,39 +5,41 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
+import 'react-calendar/dist/Calendar.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NotFound from "./components/static/NotFound"
-import AddIncomes from './components/addIncomes/AddIncomes';
-import IncomesHistory from "./components/IncomesHistory";
-import Options from "./components/Options";
+import AddTransaction from './components/addIncomes/AddTransaction';
+import IncomesHistory from "./components/history/IncomesHistory";
 import Statistic from "./components/statistic/Statistic"
 import LogIn from './components/static/LogIn';
 import SignUp from './components/static/SignUp';
+import Planedtransaction from './components/palnedTransaction/PlanedTransaction';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
   {
-    path: "react_budget/",
+    path: "/",
     element: <App />,
     errorElement: <NotFound/>,
     children: [{
-      path: "react_budget/addIncomes",
-      element: <AddIncomes/>
+      path: "/addtransaction",
+      element: <AddTransaction/>
     }, {
       path: "/history",
       element: <IncomesHistory/>
     }, {
-      path: "/options",
-      element: <Options/>
-    }, {
       path: "/statistic",
       element: <Statistic/>
+    }, {
+      path: "/planed",
+      element: <Planedtransaction/>
     }]
   }, {
     path: "/login",
@@ -46,7 +48,10 @@ const router = createBrowserRouter([
     path: "/signUp",
     element: <SignUp/>
   }
-]);
+],
+{
+  basename: "/react_budget"
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

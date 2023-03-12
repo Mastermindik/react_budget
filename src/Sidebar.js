@@ -1,23 +1,30 @@
-import { Navbar, Nav, Container, ListGroup } from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ok from './img/App/ok.svg';
+import cancel from './img/App/decline.svg';
 
-function Sidebar({changeColour}) {
-  return <nav className='navigation bg-secondary'>
+function Sidebar({changeColour, handleSubmit, exit, decline}) {
+  return <nav className='navigation'>
   <ListGroup variant='flush'>
-    <ListGroup.Item variant='dark' className='p-0' onClick={changeColour}>
-      <Link className='sidebar-item nav-link text-dark p-3' to={"/addIncomes"}>Додати доходи</Link>
+    <ListGroup.Item className='p-0' id='main-select' onClick={changeColour}>
+      <Link className='sidebar-item nav-link text-dark p-3' to={"/addtransaction"} data-numberlist='0%'>Add transaction</Link>
     </ListGroup.Item>
-    <ListGroup.Item variant='dark' className='p-0' onClick={changeColour}>
-      <Link className='sidebar-item nav-link text-dark p-3' to={"/history"}>Переглянути історію</Link>
+    <ListGroup.Item className='p-0' onClick={changeColour}>
+      <Link className='sidebar-item nav-link text-dark p-3' to={"/history"} data-numberlist='100%'>History of transaction</Link>
     </ListGroup.Item>
-    <ListGroup.Item variant='dark' className='p-0' onClick={changeColour}>
-      <Link className='sidebar-item nav-link text-dark p-3' to={"/statistic"}>Переглянути статистику</Link>
+    <ListGroup.Item className='p-0' onClick={changeColour}>
+      <Link className='sidebar-item nav-link text-dark p-3' to={"/statistic"} data-numberlist='200%'>Statistic</Link>
     </ListGroup.Item>
-    <ListGroup.Item variant='dark' className='p-0' onClick={changeColour}>
-      <Link className='sidebar-item nav-link text-dark p-3' to={"/options"}>Налаштування</Link>
+    <ListGroup.Item className='p-0' onClick={changeColour}>
+      <Link className='sidebar-item nav-link text-dark p-3' to={"/planed"} data-numberlist='300%'>Planed transactions</Link>
     </ListGroup.Item>
-    <ListGroup.Item variant='dark' className='p-0' onClick={changeColour}>
-      <Link className='sidebar-item nav-link text-dark p-3'>Вийти</Link>
+    <ListGroup.Item className='p-0' onClick={changeColour}>
+      <a className='sidebar-item nav-link text-dark p-3' href='#' onClick={exit}>Exit</a>
+      <div className='confirmation'>
+        <p>Do you want to log out?</p>
+        <button className='submit' onClick={handleSubmit}><img src={ok} alt='ok'/></button>
+        <button className='cancel' onClick={decline}><img src={cancel} alt='cancel'/></button>
+      </div>
     </ListGroup.Item>
   </ListGroup>
 </nav>

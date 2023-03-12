@@ -15,31 +15,7 @@ code {
 /* Main */
 
 
-/* Add */
-.input-select, .input-price {
-  flex: 0 0 13% !important;
-}
 
-.today-incomes-transaction {
-  flex: auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  border: 1px solid #c6c6c6;
-  border-radius: .3rem;
-}
-.today-incomes-transaction .transaction-category, .transaction-price {
-  padding: 1rem 0;
-  flex: 0 0 13%;
-
-  border-right: 1px solid #c6c6c6;
-}
-.today-incomes-transaction .transaction-notes {
-  padding-left: 1rem;
-  flex: auto;
-}
 
 
 /* Sign Up */

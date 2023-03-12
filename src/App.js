@@ -1,40 +1,94 @@
-import { Navbar, Nav, Container, ListGroup } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import logo from './logo.svg';
+// import lol from './img/App/door.svg';
 import './App.scss';
-import { Link, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 
 function App() {
-  function changeColour(e) {
-    document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
-    e.target.classList.toggle('active');
-  }
-  let [user, setUser] = useState({});
+  const [user, setUser] = useState([])
+  const [isRedirected, setIsRedirected] = useState(false);
+
   useEffect(() => {
-    let a = JSON.parse(localStorage.getItem('User'));
-    console.log(a);
-    setUser(a);
+    // if (!localStorage.getItem('Remember') && !sessionStorage.getItem('Remember')) {
+    //   setIsRedirected(true);
+    // }
+    const log = async () => {
+      await fetch('https://dashakol88.pythonanywhere.com/api/user/login', { method: "POST", mode: "cors", credentials: "include", body: '{"username":"Dasha","password":"testpassword123"}' });
+      await fetch('https://dashakol88.pythonanywhere.com/api/user/account', {
+        credentials: "include",
+        mode: 'cors'
+      }).then(data => data.json()).then(data => setUser(data.Account))
+    }
+    log();/* удалить */
+    // fetch('https://dashakol88.pythonanywhere.com/api/user/account', {
+    //   credentials: "include",
+    //   mode: 'cors'
+    //  }).then(data => data.json()).then(data => setUser(data.Account))
   }, [])
+
+  function changeColour(e) {
+    const atribute = e.target.getAttribute('data-numberlist');
+    if (atribute !== null) {
+      document.getElementById('main-select').style.setProperty('--sq-trans', atribute); 
+    }
+  }
+
+  function exit(e) {
+    e.target.classList.toggle('exit');
+    document.querySelector('.confirmation').classList.toggle('active');
+  }
+  function decline() {
+    document.querySelector('.exit').classList.toggle('exit');
+    document.querySelector('.confirmation').classList.toggle('active');
+  }
+
+  const handleSubmit = async () => {
+    const response = await fetch('https://dashakol88.pythonanywhere.com/api/user/logout', {
+      method: 'GET',
+      credentials: "include",
+      mode: 'cors',
+    });
+
+    if (response.ok) {
+      localStorage.clear();
+      sessionStorage.clear();
+      setIsRedirected(true);
+
+    } else {
+      console.log('Failed to fetch users');
+    }
+  };
+
+  function burger() {
+    document.querySelector('.navigation').classList.toggle('visible');
+  }
+
   return (<>
-    <Navbar  bg="dark" variant="dark">
+    <Navbar className='header' /* bg="dark"  */ variant="dark">
+      <div className='burger-wraper' onClick={burger}>
+        <span className='burger'></span>
+      </div>
       <Navbar.Brand href='#'>
         <img src={logo}
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-        />{' '}React Budget
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt='Logo' />{' '}React Budget
       </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
-        <Navbar.Text>
-          Signed in as: <a href="#login" className='text-capitalize'>{user?.name?.firstname}</a>
+        <Navbar.Text className='d-flex '>
+          <p className='text-white m-0 mr-3'>Balance: {user[0]?.account_balance} UAH</p>
+          <p className='m-0'>Signed in as: <a href="#login" className='text-capitalize'>{user[0]?.account_owner__username}</a></p>
         </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>
     <div className='d-flex'>
-    <Sidebar changeColour={changeColour} />
-    <Outlet />
+      <Sidebar changeColour={changeColour} handleSubmit={handleSubmit} exit={exit} decline={decline}/>
+      <Outlet />
     </div>
+    {isRedirected ? <Navigate to={`/login`}></Navigate> : ''}
   </>
   );
 }

@@ -1,53 +1,38 @@
-import { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { useRef, useState } from "react";
+import { Form } from "react-bootstrap";
 import {
   Navigate
 } from "react-router-dom";
 
 function SignUp() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [isRedirected, setIsRedirected] = useState(false);
-  const [user, setUser] = useState({});
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
+  const emailRef = useRef(null);
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true);
-
-    const url = 'https://fakestoreapi.com/users';
-    const response = await fetch(url);
+    let user = {
+      email: emailRef.current.value,
+      username: usernameRef.current.value,
+      password: passwordRef.current.value
+    }
+    const response = await fetch('https://dashakol88.pythonanywhere.com/api/user/register', {
+      method: 'POST',
+      credentials: "include",
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
 
     if (response.ok) {
-      const users = await response.json();
-
-      const currentUser = users.filter((user) => user.email === email && user.password === password);
-
-      if (currentUser) {
-        console.log('User authenticated successfully');
-        console.log(currentUser[0].id);
-        localStorage.setItem('User', JSON.stringify(currentUser[0]))
-        // setUser(currentUser[0]);
-        setIsRedirected(true);
-        // handle successful authentication
-      } else {
-        console.log('Invalid email or password');
-        // handle authentication failure
-      }
+      localStorage.setItem('Remember', JSON.stringify(true));
+      setIsRedirected(true);
+      
     } else {
       console.log('Failed to fetch users');
-      // handle fetch failure
     }
-
-    setIsLoading(false);
   };
 
   // useEffect(() => localStorage.clear(), []) ВКЛЮЧИТЬ!
@@ -58,22 +43,26 @@ function SignUp() {
     <Form className= "login-form d-flex flex-column justify-content-between" onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control className="login-input" type="email" placeholder="Enter email" value={email} onChange={handleEmailChange} required/>
+        <Form.Control className="login-input" type="email" placeholder="Enter email" ref={emailRef} required/>
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
-
+      <Form.Group>
+        <Form.Label>Username</Form.Label>
+        <Form.Control className="login-input" type="text" placeholder="Enter username" ref={usernameRef} required/>
+      </Form.Group>
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control className="login-input" type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required/>
+        <Form.Control className="login-input" type="password" placeholder="Password" minLength={6} ref={passwordRef} required/>
       </Form.Group>
       <button type="submit" className="btn-login font-weight-bold text-uppercase">
         sign Up
       </button>
     </Form>
   </div>
-  {isRedirected ? <Navigate to={`/addIncomes`}></Navigate> : ''}
+  {isRedirected ? <Navigate to={`/addtransaction`}></Navigate> : ''}
+  <div className="login-bg"></div>
 </div>
 }
 

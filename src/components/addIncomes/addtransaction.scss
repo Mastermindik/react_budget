@@ -1,0 +1,175 @@
+@use '../../App.scss' as shadow;
+
+/* Add */
+
+.add-header {
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        padding: 0.5rem;
+        width: 6.8rem;
+
+        font-size: 14px;
+
+        border: none;
+        border-radius: .5rem;
+        box-shadow: shadow.$primary-shadow;
+    }
+}
+
+.add-income-group {
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .add-select {
+        max-width: 8rem;
+        flex: 0 0 10%;
+    }
+
+    .add-select,
+    .add-input {
+        padding: 0.5rem;
+
+
+        border: none;
+        border-radius: .5rem;
+        box-shadow: shadow.$primary-shadow;
+
+        option {
+            padding: 0.5rem;
+            border: none;
+        }
+    }
+
+    .add-select {
+        text-transform: capitalize;
+    }
+
+    .number {
+        width: 3rem;
+        flex: 1 0 10%;
+
+        &::-webkit-inner-spin-button {
+            appearance: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .text {
+        flex: auto;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .add-button {
+        padding: .5rem 2.5rem;
+
+        color: white;
+        background: rgb(1, 177, 1);
+
+        border: none;
+        border-radius: .5rem;
+        box-shadow: shadow.$primary-shadow;
+
+        transition: all .3s;
+
+        &:hover {
+            background: rgb(1, 157, 1);
+        }
+    }
+}
+
+.input-select,
+.input-price {
+    flex: 0 0 15% !important;
+}
+
+
+.latest-transaction {
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+
+    border: 1px solid #c6c6c6;
+    border-radius: .5rem;
+
+    box-shadow: shadow.$primary-shadow;
+
+    .transaction-category,
+    .transaction-price,
+    .transaction-type,
+    .transaction-date {
+        //   padding: .7rem 0;
+        flex: 0 0 10%;
+
+        border-right: 1px solid #c6c6c6;
+    }
+
+    .transaction-type {
+        @media (max-width: 576px) {
+            flex: 0 0 15%;
+        }
+    }
+
+    .transaction-date {
+        flex: 0 0 9%;
+    }
+
+    .transaction-category {
+        flex: 0 0 14%;
+        text-transform: capitalize;
+
+        @media (max-width: 576px) {
+            flex: 0 0 26%;
+        }
+    }
+
+    .transaction-price {
+        flex: 0 0 15%;
+    }
+
+    .transaction-notes {
+        padding: 0 1rem;
+        flex: auto;
+        overflow: hidden;
+    }
+
+    .button-edit,
+    .button-delete {
+        padding: 0.5rem;
+        width: 2.5rem;
+
+        border: none;
+        border-radius: .3rem;
+        background: none;
+        transition: all .5s;
+
+        &:hover {
+            background: #eceaea;
+        }
+
+        img {
+            width: 1.7rem;
+        }
+
+        @media (max-width: 768px) {
+            padding: 0;
+        }
+    }
+}

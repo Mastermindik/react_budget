@@ -1,9 +1,5 @@
-import { Dropdown, DropdownButton, FormControl, InputGroup } from "react-bootstrap"
-
-function Categories() {
-  return <FormControl as='select' className="input-select">
-    <option>Category</option>   
-  </FormControl>
+function Categories({category}) {
+  return <option className="text-capitalize">{category?.category_name}</option>
 }
 
 export default Categories
