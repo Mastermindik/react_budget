@@ -22,7 +22,7 @@ import LogIn from './components/static/LogIn';
 import SignUp from './components/static/SignUp';
 import Planedtransaction from './components/palnedTransaction/PlanedTransaction';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
   {
     path: "/",
@@ -48,10 +48,10 @@ const router = createBrowserRouter(
     path: "/signUp",
     element: <SignUp/>
   }
-],
+]/* ,
 {
   basename: "/react_budget"
-});
+} */);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

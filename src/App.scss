@@ -82,6 +82,9 @@ body {
     a {
       cursor: pointer;
     }
+    &:last-child {
+      cursor: pointer;
+    }
   }
 
   .confirmation {
@@ -197,7 +200,7 @@ body {
   height: 92.5svh;
   width: 95%;
   max-width: 77rem;
-  
+
   overflow-y: auto;
   overflow-x: hidden;
 

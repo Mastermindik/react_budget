@@ -11,21 +11,16 @@ function App() {
   const [isRedirected, setIsRedirected] = useState(false);
 
   useEffect(() => {
-    // if (!localStorage.getItem('Remember') && !sessionStorage.getItem('Remember')) {
-    //   setIsRedirected(true);
-    // }
+    if (!localStorage.getItem('Remember') && !sessionStorage.getItem('Remember')) {
+      setIsRedirected(true);
+    }
     const log = async () => {
-      await fetch('https://dashakol88.pythonanywhere.com/api/user/login', { method: "POST", mode: "cors", credentials: "include", body: '{"username":"Dasha","password":"testpassword123"}' });
       await fetch('https://dashakol88.pythonanywhere.com/api/user/account', {
         credentials: "include",
         mode: 'cors'
       }).then(data => data.json()).then(data => setUser(data.Account))
     }
     log();/* удалить */
-    // fetch('https://dashakol88.pythonanywhere.com/api/user/account', {
-    //   credentials: "include",
-    //   mode: 'cors'
-    //  }).then(data => data.json()).then(data => setUser(data.Account))
   }, [])
 
   function changeColour(e) {

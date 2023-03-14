@@ -19,7 +19,7 @@ function Sidebar({changeColour, handleSubmit, exit, decline}) {
       <Link className='sidebar-item nav-link text-dark p-3' to={"/planed"} data-numberlist='300%'>Planed transactions</Link>
     </ListGroup.Item>
     <ListGroup.Item className='p-0' onClick={changeColour}>
-      <a className='sidebar-item nav-link text-dark p-3' href='#' onClick={exit}>Exit</a>
+      <p className='sidebar-item nav-link text-dark p-3' onClick={exit}>Exit</p>
       <div className='confirmation'>
         <p>Do you want to log out?</p>
         <button className='submit' onClick={handleSubmit}><img src={ok} alt='ok'/></button>
