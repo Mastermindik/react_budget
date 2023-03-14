@@ -9,7 +9,6 @@ import 'react-calendar/dist/Calendar.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  createBrowserRouter,
   createHashRouter,
   RouterProvider,
 } from "react-router-dom";
