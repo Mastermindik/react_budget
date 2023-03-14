@@ -31,7 +31,7 @@ function SignUp() {
       setIsRedirected(true);
       
     } else {
-      console.log('Failed to fetch users');
+      alert('Email or username is already used!');
     }
   };
 

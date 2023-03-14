@@ -139,9 +139,11 @@ function Planedtransaction() {
         <PlanedStatisticChart planedStatistic={planedStatistic} />
       </div>
       <div className="planed-transaction-statistic col-sm-1">
+      {!planedTransactions.length ? '' : 
         <button className="slide" onClick={showStatistic}>
           <img src={arrow} alt="left" />
-        </button>
+        </button>}
+        
       </div>
     </div>
 

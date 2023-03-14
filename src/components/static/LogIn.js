@@ -36,7 +36,7 @@ function LogIn() {
       }
       setIsRedirected(true);
     } else {
-      console.log('Failed to fetch users');
+      alert('Incorrect login or password');
     }
 
   };

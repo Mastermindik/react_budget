@@ -1,6 +1,5 @@
 import { Navbar } from 'react-bootstrap';
 import logo from './logo.svg';
-// import lol from './img/App/door.svg';
 import './App.scss';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -20,7 +19,7 @@ function App() {
         mode: 'cors'
       }).then(data => data.json()).then(data => setUser(data.Account))
     }
-    log();/* удалить */
+    log();
   }, [])
 
   function changeColour(e) {
@@ -61,7 +60,7 @@ function App() {
   }
 
   return (<>
-    <Navbar className='header' /* bg="dark"  */ variant="dark">
+    <Navbar className='header' variant="dark">
       <div className='burger-wraper' onClick={burger}>
         <span className='burger'></span>
       </div>
