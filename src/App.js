@@ -8,11 +8,15 @@ import Sidebar from './Sidebar';
 function App() {
   const [user, setUser] = useState([])
   const [isRedirected, setIsRedirected] = useState(false);
+  const [updateUser, setUpdateuser] = useState(0);
 
   useEffect(() => {
     if (!localStorage.getItem('Remember') && !sessionStorage.getItem('Remember')) {
       setIsRedirected(true);
     }
+  }, [])
+  
+  useEffect(() => {
     const log = async () => {
       await fetch('https://dashakol88.pythonanywhere.com/api/user/account', {
         credentials: "include",
@@ -20,7 +24,8 @@ function App() {
       }).then(data => data.json()).then(data => setUser(data.Account))
     }
     log();
-  }, [])
+
+  }, [updateUser])
 
   function changeColour(e) {
     const atribute = e.target.getAttribute('data-numberlist');
@@ -80,7 +85,7 @@ function App() {
     </Navbar>
     <div className='d-flex'>
       <Sidebar changeColour={changeColour} handleSubmit={handleSubmit} exit={exit} decline={decline}/>
-      <Outlet />
+      <Outlet context={[updateUser, setUpdateuser]}/>
     </div>
     {isRedirected ? <Navigate to={`/login`}></Navigate> : ''}
   </>

@@ -4,6 +4,7 @@ import HistoryTable from "./HistoryTable";
 import "./history.scss"
 import TransactionInfo from "./TransactionInfo";
 import DateFilter from "./DateFilter";
+import { useOutletContext } from "react-router-dom";
 
 
 function IncomesHistory() {
@@ -19,6 +20,7 @@ function IncomesHistory() {
   const [transactionInfo, setTransactionInfo] = useState({});
   const [render, setRender] = useState(0);
   const [categories, setCategories] = useState([]);
+  const [updateUser, setUpdateuser] = useOutletContext();
 
   useEffect(() => {
     fetch('https://dashakol88.pythonanywhere.com/api/categories', {
@@ -64,6 +66,7 @@ function IncomesHistory() {
     });
     setRender(render + 1);
     setShowModal(false);
+    setUpdateuser(updateUser + 1);
   }
 
   function filter() {

@@ -3,6 +3,7 @@ import Categories from "./Categories"
 import LatestTransaction from "./LatestTransaction";
 import "./addtransaction.scss";
 import ConfirmRemove from "./ConfirmRemove";
+import { useOutletContext } from "react-router-dom";
 
 
 function AddTransaction() {
@@ -18,6 +19,7 @@ function AddTransaction() {
   const categoryRef = useRef(null);
   const notesRef = useRef(null);
   const dateRef = useRef(null);
+  const [updateUser, setUpdateuser] = useOutletContext();
 
   useEffect(() => {
     fetch('https://dashakol88.pythonanywhere.com/api/categories', {
@@ -52,6 +54,7 @@ function AddTransaction() {
       });
     setRender(render + 1);
     setShowModalDelete(false);
+    setUpdateuser(updateUser + 1);
   }
 
   const addTransaction = async () => {
@@ -81,6 +84,7 @@ function AddTransaction() {
         console.error('Error:', error);
       });
     setRender(render + 1);
+    setUpdateuser(updateUser + 1);
     typeRef.current.value = '';
     categoryRef.current.value = '';
     setSumm('');
