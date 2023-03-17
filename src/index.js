@@ -9,7 +9,7 @@ import 'react-calendar/dist/Calendar.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +21,7 @@ import LogIn from './components/static/LogIn';
 import SignUp from './components/static/SignUp';
 import Planedtransaction from './components/palnedTransaction/PlanedTransaction';
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
   {
     path: "/",

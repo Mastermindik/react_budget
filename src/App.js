@@ -31,6 +31,8 @@ function App() {
     const atribute = e.target.getAttribute('data-numberlist');
     if (atribute !== null) {
       document.getElementById('main-select').style.setProperty('--sq-trans', atribute); 
+    } else {
+      document.getElementById('main-select').style.setProperty('--sq-trans', -100);
     }
   }
 
