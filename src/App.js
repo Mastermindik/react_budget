@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Sidebar from './Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
   const [user, setUser] = useState([])

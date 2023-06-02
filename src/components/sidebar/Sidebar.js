@@ -1,7 +1,7 @@
 import { ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ok from './img/App/ok.svg';
-import cancel from './img/App/decline.svg';
+import ok from '../../img/App/ok.svg';
+import cancel from '../../img/App/decline.svg';
 
 function Sidebar({changeColour, handleSubmit, exit, decline}) {
   return <nav className='navigation'>
